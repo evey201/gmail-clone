@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import './emailRow.css'
 import { Checkbox, IconButton } from '@material-ui/core'
 // import DragIndicatorIcon from '@material-ui/icons/DragIndicator';
@@ -6,8 +7,9 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import LabelImportantIcon from '@material-ui/icons/LabelImportant';
 
 const EmailRow = ({ id, title, subject, description, time }) => {
+    const history = useHistory();
   return (
-    <div className="emailRow">
+    <div onClick={() => history.push("/mail")} className="emailRow">
         <div className="emailRow__options">
             {/* <IconButton>
                 <DragIndicatorIcon />
